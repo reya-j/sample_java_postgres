@@ -1,0 +1,13 @@
+language: java
+
+jdk:
+   - oraclejdk7
+   - openjdk6
+   - openjdk7
+script:
+   - gradle clean build
+   - gradle test
+   - gradle cobertura
+notifications:
+  email: false
+

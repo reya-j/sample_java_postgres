@@ -1,0 +1,29 @@
+apply plugin: 'java'
+
+test.reports.junitXml.destination = 'shippable/testresults'  
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.10'
+    compile 'postgresql:postgresql:9.0-801.jdbc4'
+} 
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'postgresql:postgresql:9.0-801.jdbc4'
+        classpath 'net.saliman:gradle-cobertura-plugin:2.2.2'
+    }
+}
+apply plugin: 'cobertura'
+cobertura {
+   coverageReportDir = file('shippable/codecoverage')
+   coverageFormats = ['xml']
+}
+
