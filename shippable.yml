@@ -1,6 +1,6 @@
 language: java
 
-build_image: drydock/u12javpls:tip
+build_image: drydock/u12javall:tip
 
 services:
    - postgres
