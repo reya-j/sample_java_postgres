@@ -1,5 +1,10 @@
 language: java
 
+build_image: drydock/u12javpls:tip
+
+services:
+   - postgres
+
 jdk:
    - oraclejdk7
    - openjdk6
